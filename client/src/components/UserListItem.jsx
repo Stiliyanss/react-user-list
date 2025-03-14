@@ -1,3 +1,5 @@
+import { fromIsoDate } from "../utils/dateTimeUtils";
+
 export default function UserListItem(props){
   return(
     <tr>
@@ -9,7 +11,7 @@ export default function UserListItem(props){
             <td>{props.user.lastName}</td>
             <td>{props.user.email}</td>
             <td>{props.user.phoneNumber}</td>
-            <td>{props.user.createdAt}</td>
+            <td>{fromIsoDate(props.user.createdAt)}</td>
 
             <td className="actions">
               <button className="btn edit-btn" title="Edit">
