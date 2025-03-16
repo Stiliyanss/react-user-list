@@ -26,12 +26,18 @@ export default function UserList(){
     setShowCreate(false);
   }
 
+  const saveCreateUserClickHandler = (e)=>{
+    e.preventDefault();
+    console.log('save');
+    
+  }
+
   return(
     <section className="card users-container">
     {/* <!-- Search bar component --> */}
     <Search/>
 
-  {showCreate && <UserCreate onClose={closeCreateUserClickHandler}/>}
+  {showCreate && <UserCreate onClose={closeCreateUserClickHandler} onSave={saveCreateUserClickHandler}/>}
 
     {/* <!-- Table component --> */}
     <div className="table-wrapper">
